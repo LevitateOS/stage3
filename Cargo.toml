@@ -1,0 +1,10 @@
+[package]
+name = "stage-3"
+version = "0.1.0"
+edition = "2021"
+description = "Stage3 tarball builder for LevitateOS"
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4", features = ["derive"] }
