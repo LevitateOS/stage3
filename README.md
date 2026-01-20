@@ -1,34 +1,35 @@
 # stage3
 
-Stage3 tarball builder for LevitateOS.
-
-## Overview
-
-Builds stage3 tarballs containing the base system that gets extracted during LevitateOS installation.
-
-## Building
-
-```bash
-cargo build
-```
+Stage3 tarball builder for LevitateOS. Creates the base system archive extracted during installation.
 
 ## Usage
 
 ```bash
-cargo run
+cargo run -- build --source /path/to/rocky --output ./stage3.tar.zst
+cargo run -- list ./stage3.tar.zst
+cargo run -- verify ./stage3.tar.zst
 ```
+
+## What's Included
+
+- Bash shell
+- Coreutils binaries
+- Systemd init system
+- PAM authentication
+- System configuration (/etc)
+- Recipe package manager
+
+## What's NOT Included
+
+- Kernel (installed separately)
+- Bootloader (configured by installer)
 
 ## Development
 
 ```bash
-# Build
-cargo build
-
-# Run tests
-cargo test
-
-# Check with clippy
-cargo clippy
+cargo build        # Build
+cargo test         # Run unit tests
+cargo clippy       # Lint
 ```
 
 ## License
